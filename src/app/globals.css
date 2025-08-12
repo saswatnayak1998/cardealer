@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #d7d7d7;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: #0b0b0b;
+  --color-border: #1a1a1a;
+  --color-gold: #d4af37;
+  --color-gold-soft: #fff3b0;
+  --color-silver: #c0c0c0;
+  --color-accent: #8a8a8a;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --radius-base: 0.75rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #d7d7d7;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/***** Base utilities *****/
+.container {
+  max-width: 1200px;
+}
+
+/* Shimmering text effects */
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.text-shimmer-gold {
+  background-image: linear-gradient(90deg, #9b7d1c, #d4af37, #fff3b0, #d4af37, #9b7d1c);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.text-shimmer-silver {
+  background-image: linear-gradient(90deg, #7a7a7a, #c0c0c0, #f2f2f2, #c0c0c0, #7a7a7a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 7s linear infinite;
 }
