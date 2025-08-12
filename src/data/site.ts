@@ -4,8 +4,8 @@ export const site = {
   state: "CA",
   addressLine: "999 21st Avenue",
   shortAddress: "999 21st Avenue",
-  phone: "9999999999",
-  phoneDigits: "+19999999999",
+  phone: "(774)436-22809",
+  phoneDigits: "+1(774)436-22809",
   secondaryPhone: "(774) 436-2280",
   secondaryPhoneDigits: "+17744362280",
 };
