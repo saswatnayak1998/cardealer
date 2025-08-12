@@ -31,21 +31,6 @@ export default function Home() {
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.55),rgba(0,0,0,0.85))]" />
         </div>
 
-        {/* Call icon with 24x7 badge */}
-        <div className="pointer-events-none absolute right-4 top-4 md:right-8 md:top-8 flex flex-col items-center gap-2">
-          <a
-            href={links.tel}
-            className="pointer-events-auto h-14 w-14 md:h-16 md:w-16 rounded-full border border-[var(--color-border)] bg-black/70 text-foreground grid place-items-center shadow-md hover:border-foreground/30"
-            aria-label={`Call ${site.name}`}
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-90">
-              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V21a1 1 0 01-1 1C10.3 22 2 13.7 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.2 2.2z" fill="currentColor"/>
-            </svg>
-          </a>
-          <div className="rounded-full border border-[var(--color-border)] bg-black/60 px-3 py-1 text-[11px] md:text-xs text-foreground/90">
-            24×7 availability
-          </div>
-        </div>
 
         <div className="mx-auto w-full container px-4 py-20 md:py-28">
           <div className="max-w-2xl">
