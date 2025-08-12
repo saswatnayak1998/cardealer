@@ -29,6 +29,7 @@ export default function InventoryGrid() {
   const [make, setMake] = useState<string>("");
   const [fuel, setFuel] = useState<string>("");
   const [trans, setTrans] = useState<string>("");
+  const [showFilters, setShowFilters] = useState(false);
 
   const makes = Array.from(new Set(vehicles.map((v) => v.make))).sort();
   const bodies = Array.from(new Set(vehicles.map((v) => v.bodyStyle).filter(Boolean))) as string[];
@@ -62,13 +63,22 @@ export default function InventoryGrid() {
 
   return (
     <div>
-      <div className="flex items-center gap-3 flex-wrap">
+      <div className="flex items-center justify-between md:justify-start md:gap-3">
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search make, model, year..."
           className="w-full md:w-64 rounded-[var(--radius-base)] border border-[var(--color-border)] bg-black/50 px-4 py-2.5 text-sm outline-none ring-0 placeholder:text-foreground/40 focus:border-foreground/30"
         />
+        <button
+          className="md:hidden ml-3 inline-flex items-center rounded-[var(--radius-base)] border border-[var(--color-border)] px-3 py-2 text-xs text-foreground/80"
+          onClick={() => setShowFilters((v) => !v)}
+        >
+          {showFilters ? "Hide Filters" : "Show Filters"}
+        </button>
+      </div>
+
+      <div className={`mt-3 md:mt-4 grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap md:items-center gap-3 ${showFilters ? "" : "hidden md:grid md:contents"}`}>
         <select value={price} onChange={(e) => setPrice(e.target.value)} className="rounded-[var(--radius-base)] border border-[var(--color-border)] bg-black/50 px-3 py-2.5 text-sm">
           <option value="">Price Range</option>
           {priceRanges.map((r) => (
@@ -89,7 +99,7 @@ export default function InventoryGrid() {
         </select>
         <select value={origin} onChange={(e) => setOrigin(e.target.value)} className="rounded-[var(--radius-base)] border border-[var(--color-border)] bg-black/50 px-3 py-2.5 text-sm">
           <option value="">Automobile</option>
-          {['American','Asian','European'].map((o) => (
+          {["American","Asian","European"].map((o) => (
             <option key={o} value={o}>{o}</option>
           ))}
         </select>
@@ -101,13 +111,13 @@ export default function InventoryGrid() {
         </select>
         <select value={fuel} onChange={(e) => setFuel(e.target.value)} className="rounded-[var(--radius-base)] border border-[var(--color-border)] bg-black/50 px-3 py-2.5 text-sm">
           <option value="">Fuel Type</option>
-          {['Gasoline','Hybrid','Electric','Diesel'].map((f) => (
+          {["Gasoline","Hybrid","Electric","Diesel"].map((f) => (
             <option key={f} value={f}>{f}</option>
           ))}
         </select>
         <select value={trans} onChange={(e) => setTrans(e.target.value)} className="rounded-[var(--radius-base)] border border-[var(--color-border)] bg-black/50 px-3 py-2.5 text-sm">
           <option value="">Transmission</option>
-          {['Automatic','Manual'].map((t) => (
+          {["Automatic","Manual"].map((t) => (
             <option key={t} value={t}>{t}</option>
           ))}
         </select>
