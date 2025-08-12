@@ -1,5 +1,5 @@
 export const site = {
-  name: "Auto Deals",
+  name: "Car Deals",
   city: "Daly City",
   state: "CA",
   addressLine: "999 21st Avenue",

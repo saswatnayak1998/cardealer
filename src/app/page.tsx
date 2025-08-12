@@ -35,7 +35,7 @@ export default function Home() {
         <div className="mx-auto w-full container px-4 py-20 md:py-28">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-shimmer-gold">
-              Curated cars. Pitch‑black elegance.
+              Car Dealership
             </h1>
             <p className="mt-4 text-foreground/70 text-base md:text-lg">
               A refined inventory with transparent pricing and easy financing. Minimal noise, maximum taste.

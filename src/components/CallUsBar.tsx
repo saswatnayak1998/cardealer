@@ -7,9 +7,10 @@ export default function CallUsBar() {
         <div className="p-[2px] rounded-[var(--radius-base)] bg-[linear-gradient(90deg,#7a7a7a,#c0c0c0,#f2f2f2,#c0c0c0,#7a7a7a)] [background-size:200%_auto] animate-[shimmer_7s_linear_infinite] shadow-md">
           <a
             href={links.tel2}
+            aria-label={`Call ${site.secondaryPhone}`}
             className="block w-full text-center rounded-[calc(var(--radius-base)-2px)] border border-transparent bg-black text-foreground py-3 text-base font-semibold hover:underline"
           >
-            Call us (24×7): {site.secondaryPhone}
+            Call us (24×7)
           </a>
         </div>
       </div>
