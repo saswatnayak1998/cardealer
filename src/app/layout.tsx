@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Auto Deals | Daly City, CA",
+  title: "Car Deals | Daly City, CA",
   description:
     "Minimal, elegant car dealership website. Explore curated inventory, easy financing, and friendly service in Daly City.",
 };
